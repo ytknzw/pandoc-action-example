@@ -2,6 +2,9 @@ name: Advanced Usage
 
 on: push
 
+permissions:
+  contents: write
+
 jobs:
   convert_via_pandoc:
     runs-on: ubuntu-22.04
