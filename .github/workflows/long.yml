@@ -6,8 +6,10 @@ jobs:
   convert_via_pandoc:
     runs-on: ubuntu-22.04
     steps:
-      - name: Create an example file
-        run: echo "foo" > input.txt # create an example file
+      - name: Create example files
+        run: |
+          echo "foo" > input.txt # create an example file
+          date +%s > report.txt
       - uses: docker://pandoc/core:2.9
         with:
           args: >- # allows you to break string into multiple lines
@@ -24,8 +26,8 @@ jobs:
 #          git config --global user.email 'your-username@users.noreply.github.com'
 #          git commit -am "Automated push"
 #          git push
-      - name: Create report file
-        run: date +%s > report.txt
+#      - name: Create report file
+#        run: date +%s > report.txt
       - name: Commit report
         run: |
           ls ${{ github.workspace }}
