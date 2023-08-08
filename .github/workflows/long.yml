@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Commit output
         run: |
-          git add .
+          git add index.html
           git config --global user.name 'Your Name'
           git config --global user.email 'your-username@users.noreply.github.com'
           git commit -am "Automated push"
