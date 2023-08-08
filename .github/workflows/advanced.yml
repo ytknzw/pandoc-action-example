@@ -32,7 +32,7 @@ jobs:
         run: |
           ls -al output
           ls -al ${{ github.workspace }}
-      - uses: actions/checkout@v3
+#      - uses: actions/checkout@v3
       - name: Commit output
         run: |
           git add ./output/result.pdf
