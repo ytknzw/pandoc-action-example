@@ -27,6 +27,7 @@ jobs:
           path: output
       - name: List files in the repository again
         run: |
+          ls -al output
           ls -al ${{ github.workspace }}
       - uses: actions/checkout@v3
       - name: Commit output
