@@ -14,12 +14,20 @@ jobs:
             --output=index.html
             input.txt
       - uses: actions/checkout@v3
-      - name: Commit output
+#      - name: Commit output
+#        run: |
+#          ls ${{ github.workspace }}
+#          echo "${{ steps.files_list.outputs.files }}"
+#          git add ${{ steps.files_list.outputs.files }}
+#          git config --global user.name 'Your Name'
+#          git config --global user.email 'your-username@users.noreply.github.com'
+#          git commit -am "Automated push"
+#          git push
+      - name: Create report file
+        run: date +%s > report.txt
+      - name: Commit report
         run: |
-          ls ${{ github.workspace }}
-          echo "${{ steps.files_list.outputs.files }}"
-          git add ${{ steps.files_list.outputs.files }}
           git config --global user.name 'Your Name'
           git config --global user.email 'your-username@users.noreply.github.com'
-          git commit -am "Automated push"
+          git commit -am "Automated report"
           git push
