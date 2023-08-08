@@ -27,6 +27,7 @@ jobs:
         run: date +%s > report.txt
       - name: Commit report
         run: |
+          ls ${{ github.workspace }}
           git add report.txt
           git config --global user.name 'Your Name'
           git config --global user.email 'your-username@users.noreply.github.com'
