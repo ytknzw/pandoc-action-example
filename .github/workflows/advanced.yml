@@ -39,7 +39,5 @@ jobs:
       - name: Commit output
         run: |
           git add ./output/result.pdf
-#          git config --global user.name 'Your Name'
-#          git config --global user.email 'your-username@users.noreply.github.com'
           git commit -am "Automated push"
           git push
