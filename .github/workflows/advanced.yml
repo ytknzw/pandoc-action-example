@@ -20,7 +20,7 @@ jobs:
           echo "files=$(printf '"%s" ' *.md)" > $GITHUB_OUTPUT
       - uses: docker://pandoc/latex:2.9
         with:
-          args: --pdf-engine=xelatex --output=output/result.pdf ${{ steps.files_list.outputs.files }}
+          args: -V colorlinks=true --output=output/result.pdf ${{ steps.files_list.outputs.files }}
       - uses: docker://pandoc/latex:2.9
         with:
           args: --output=result2.pdf ${{ steps.files_list.outputs.files }}
